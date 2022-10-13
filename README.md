@@ -1,0 +1,1 @@
+Movie list app in JS
