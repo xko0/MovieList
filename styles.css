@@ -1,6 +1,6 @@
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: rgba(0, 0, 0, 0.493);
+  background-color: rgba(0, 0, 0, 0.406);
 }
 .search-title {
   display: flex;
@@ -15,13 +15,14 @@ body {
   border: 2px solid;
   border-radius: 10px;
   box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.547);
+  opacity: 1;
+  transition: 1s;
 }
 .card:hover{
   box-shadow: 3px 3px 14px rgba(0, 0, 0, 0);
 
 }
 .img-card {
-  margin-right: 20px;
   height: 150px;
 }
 
@@ -44,6 +45,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: auto;
 }
 
 .button-85:before {
@@ -125,4 +127,72 @@ body {
 
 #search-field button:hover {
   scale: 1.05;
+}
+
+.hidden {
+ opacity: 0;
+ transition: 0.5s;
+}
+
+#close-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin: 5px;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.631);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#modal-card {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.631);
+}
+
+.modal-card {
+  display: flex;
+  position: fixed;
+  border: 1px solid rgba(0, 0, 0, 0.565);
+  border-radius: 10px;
+  z-index: 2; 
+  left: 10%;
+  top: 25%;
+  background-color: rgb(245, 245, 245);
+  width: 80%; 
+  height: 50%; 
+  animation: fade 0.8s forwards;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.img-modal-card {
+  margin-right: 20px;
+  height: 100%;
+}
+
+.img-modal-card img {
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.content-card {
+  overflow: auto;
+  width: 100%;
+  padding-left: 30px;
 }
